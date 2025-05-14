@@ -21,9 +21,9 @@ class CategoriaController extends Controller
      */
     public function index(): JsonResponse
     {
-        $categoria = $this->categoria->all();
+        $categorias = $this->categoria->with('veiculos')->get();
 
-        return response()->json($categoria, Response::HTTP_OK);
+        return response()->json($categorias, Response::HTTP_OK);
     }
 
     /**

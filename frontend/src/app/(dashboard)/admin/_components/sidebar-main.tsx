@@ -11,10 +11,11 @@ import {
   SidebarHeaderLogo,
   UserDropdown,
 } from '@/components/dashboard/sidebar'
-import { LuBookOpen, LuHome, LuLayers, LuLogOut, LuUsers } from 'react-icons/lu'
+import { LuBookOpen, LuLayers, LuLogOut, LuUsers } from 'react-icons/lu'
 import { DropdownMenuItem } from '@/components/dropdown-menu'
 import { signOut, useSession } from 'next-auth/react'
 import logo from '@/assets/img/logo.jpeg'
+import { IoHomeSharp } from "react-icons/io5";
 
 export function SidebarMain() {
   const session = useSession()
@@ -28,7 +29,7 @@ export function SidebarMain() {
       </SidebarHeader>
       <SidebarNav>
         <SidebarNavLink href="/admin">
-          <LuHome />
+          <IoHomeSharp />
           <SidebarNavLinkLabel>Home</SidebarNavLinkLabel>
         </SidebarNavLink>
         <SidebarNavLink href="/admin/usuarios">

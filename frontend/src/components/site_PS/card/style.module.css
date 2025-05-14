@@ -1,0 +1,124 @@
+.card {
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    height: fit-content;
+    min-height: 24rem;
+    min-width: 16rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #03256C;
+    padding: 4px;
+    margin: 4px;
+}
+
+.card:hover {
+    transform: scale(1.08);
+    box-shadow: 0 px 20px rgba(0, 0, 0, 0);
+}
+
+.card_img {
+    border-radius: 10px 10px 0;
+    object-fit: cover;
+    width: 100%;
+    height: 14rem;
+}
+
+.card_body {
+    border-radius: 0 0 10px 10px;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #03256C;
+    padding-bottom: 1rem;
+}
+
+.card_name {
+    font: 'Lora';
+    color: #FFF;
+    font-weight: 700;
+    font-size: 20px;
+    padding-bottom: 5px;
+}
+
+.card_content {
+    color: #06bee1;
+    font-size: 17px;
+    padding-bottom: 5px;
+}
+
+.card_button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 6px;
+    margin: 12px auto 0;
+    cursor: pointer;
+    font-size: 0.9rem;
+    display: block;
+    transition: background-color 0.5s ease;
+}
+
+.card_button:hover {
+    background-color: #0056b3;
+}
+
+.card_button:disabled {
+    background-color: red;
+    cursor: not-allowed;
+}
+
+.card_name,
+.card_content {
+    line-height: 100%;
+    margin: 1vh 0;
+}
+
+@media screen and (max-width: 600px) {
+    .card {
+        flex-direction: row;
+        width: 90vw;
+        height: auto;
+        max-height: none;
+        min-height: 100px;
+    }
+
+    .card_img {
+        max-width: 35vw;
+        border-radius: 10px 0 0 10px;
+        height: auto;
+    }
+
+    .card_body {
+        border-radius: 0 10px 10px 0;
+        max-height: none;
+    }
+
+    .card_name {
+        font-size: 25px;
+    }
+
+    .card_content {
+        font-size: 15px;
+    }
+
+    .card_button {
+        padding: 6px 12px;
+        font-size: 0.75rem;
+        max-width: 90%;
+        margin: 8px auto 0;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .card_name {
+        font-size: 20px;
+    }
+
+    .card_content {
+        font-size: 13px;
+    }
+}

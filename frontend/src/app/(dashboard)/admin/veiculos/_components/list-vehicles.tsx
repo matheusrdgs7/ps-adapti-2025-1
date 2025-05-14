@@ -12,19 +12,19 @@ import {
 import { api } from '@/services/api'
 import { vehicleType } from '@/types/vehicle'
 import { Button } from '@/components/button'
-import { LuInfo, LuPen, LuPlusCircle, LuTrash } from 'react-icons/lu'
+import { LuInfo, LuPen, LuCircle, LuTrash } from 'react-icons/lu'
 import { DialogUpdateVehicle } from './dialog-update-vehicle'
 import { DialogVehicleDelete } from './dialog-delete-vehicle'
 import { DialogInformationVehicle } from './dialog-information-vehicle'
 import { DialogCreateVehicle } from './dialog-create-vehicle'
 
 export default async function ListVehicles() {
-  const { response } = null // requisicao para api
+  const { response } = await api<vehicleType>('GET', `/veiculos`)
 
   if (!response) {
     return (
       <DashboardContainer className="text-destructive">
-        Não foi possível obter os usuários.
+        Não foi possível obter os veiculos.
       </DashboardContainer>
     )
   }
@@ -36,8 +36,8 @@ export default async function ListVehicles() {
       <DashboardContainer className="flex h-min justify-between space-x-0 gap-y-2.5 max-sm:flex-col">
         <DialogCreateVehicle>
           <Button size="sm">
-            <LuPlusCircle />
-            Novo livro
+            <LuCircle />
+            Novo veiculo
           </Button>
         </DialogCreateVehicle>
       </DashboardContainer>
@@ -46,10 +46,11 @@ export default async function ListVehicles() {
           <TableHeader>
             <TableRow>
               <TableHead>Imagem</TableHead>
-              <TableHead>Titulo</TableHead>
+              <TableHead>Nome</TableHead>
+              <TableHead>Marca</TableHead>
+              <TableHead>Ano</TableHead>
+              <TableHead>Estoque</TableHead>
               <TableHead>Categoria</TableHead>
-              <TableHead>Quantidade</TableHead>
-              <TableHead className="text-right">Ações</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
@@ -58,9 +59,11 @@ export default async function ListVehicles() {
                 <TableCell>
                   <TabbleCellImage src={vehicle.image} />
                 </TableCell>
-                <TableCell>{vehicle.title}</TableCell>
-                <TableCell>{vehicle.amount}</TableCell>
-                <TableCell>{vehicle.category.name}</TableCell>
+                <TableCell>{vehicle.name}</TableCell>
+                <TableCell>{vehicle.marca}</TableCell>
+                <TableCell>{vehicle.ano}</TableCell>
+                <TableCell>{vehicle.estoque}</TableCell>
+                <TableCell>{vehicle.categoria.name}</TableCell>
                 <TableCell className="flex justify-end gap-2">
                   <DialogInformationVehicle id={vehicle.id}>
                     <Button variant="default-inverse" size="icon">
@@ -82,7 +85,7 @@ export default async function ListVehicles() {
             ))}
           </TableBody>
           {!vehicles.length && (
-            <TableCaption>Nenhum livro encontrado.</TableCaption>
+            <TableCaption>Nenhum veiculo encontrado.</TableCaption>
           )}
         </Table>
       </DashboardContainer>

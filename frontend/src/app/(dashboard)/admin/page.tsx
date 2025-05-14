@@ -4,14 +4,14 @@ import {
   DashboardHeaderTitle,
   DashboardMain,
 } from '@/components/dashboard/dashboard-items'
-import { LuHome } from 'react-icons/lu'
+import { IoHomeSharp } from "react-icons/io5";
 
 export default function Page() {
   return (
     <>
       <DashboardHeader>
         <DashboardHeaderTitle>
-          <LuHome />
+          <IoHomeSharp/>
           Home
         </DashboardHeaderTitle>
         <DashboardHeaderDescription>

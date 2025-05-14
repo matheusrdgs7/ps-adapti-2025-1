@@ -1,0 +1,41 @@
+.page {
+    font-family: "Arial", system-ui;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    background: #1768AC;
+    position: relative;
+    padding-bottom: 340px;
+}
+
+.wrapper {
+    margin: 2rem;
+    display: grid;
+    gap: 1.2rem;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 18rem));
+    justify-content: center;
+    transition: all 0.5s ease;
+}
+
+.title {
+    color: #fff;
+    padding-top: 16px;
+    font-weight: 800;
+    display: flex;
+    font-size: 36px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+@media screen and (max-width: 660px) {
+    .wrapper {
+        grid-template-columns: 1fr;
+    }
+}

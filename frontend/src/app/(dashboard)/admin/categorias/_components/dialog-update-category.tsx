@@ -32,7 +32,7 @@ export function DialogUpdateCategory({
 
   useEffect(() => {
     const requestData = async () => {
-      const { response } = null // requisicao para api
+      const { response } = await api<categoryType>('GET', `/categorias/${id}/`) // requisicao para api
 
       if (response) {
         setCategory(response)
