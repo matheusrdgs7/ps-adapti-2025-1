@@ -1,65 +1,67 @@
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 2);
+}
+
 .card {
-    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.4);
-    border-radius: 10px;
-    height: fit-content;
-    min-height: 24rem;
-    min-width: 16rem;
+    background-color: #fff;
+    color: #000;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 2);
+    width: 380px;
+    height: 490px;
     display: flex;
     flex-direction: column;
-    text-align: center;
+    justify-content: space-between;
+    overflow: hidden;
+    padding: 0;
+    margin: 16px auto;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    background-color: #03256C;
-    padding: 4px;
-    margin: 4px;
 }
 
 .card:hover {
-    transform: scale(1.08);
-    box-shadow: 0 px 20px rgba(0, 0, 0, 0);
+    transform: scale(1.04);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
 }
 
 .card_img {
-    border-radius: 10px 10px 0;
-    object-fit: cover;
     width: 100%;
-    height: 14rem;
+    height: 220px;
+    object-fit: cover;
 }
 
 .card_body {
-    border-radius: 0 0 10px 10px;
-    text-align: center;
-    width: 100%;
+    padding: 1rem;
     display: flex;
     flex-direction: column;
-    background-color: #03256C;
-    padding-bottom: 1rem;
+    justify-content: space-between;
+    height: 100%;
 }
 
 .card_name {
-    font: 'Lora';
-    color: #FFF;
-    font-weight: 700;
-    font-size: 20px;
-    padding-bottom: 5px;
+    font-family: 'Lora', serif;
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #000;
 }
 
 .card_content {
-    color: #06bee1;
-    font-size: 17px;
-    padding-bottom: 5px;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: #444;
 }
 
 .card_button {
     background-color: #007bff;
     color: #fff;
     border: none;
-    padding: 8px 20px;
-    border-radius: 6px;
-    margin: 12px auto 0;
+    padding: 12px 24px;
+    border-radius: 8px;
     cursor: pointer;
-    font-size: 0.9rem;
-    display: block;
-    transition: background-color 0.5s ease;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    margin-top: auto;
 }
 
 .card_button:hover {
@@ -71,54 +73,24 @@
     cursor: not-allowed;
 }
 
-.card_name,
-.card_content {
-    line-height: 100%;
-    margin: 1vh 0;
-}
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
     .card {
-        flex-direction: row;
-        width: 90vw;
-        height: auto;
-        max-height: none;
-        min-height: 100px;
-    }
-
-    .card_img {
-        max-width: 35vw;
-        border-radius: 10px 0 0 10px;
-        height: auto;
-    }
-
-    .card_body {
-        border-radius: 0 10px 10px 0;
-        max-height: none;
-    }
-
-    .card_name {
-        font-size: 25px;
-    }
-
-    .card_content {
-        font-size: 15px;
-    }
-
-    .card_button {
-        padding: 6px 12px;
-        font-size: 0.75rem;
-        max-width: 90%;
-        margin: 8px auto 0;
+        width: 90%;
     }
 }
 
 @media screen and (max-width: 400px) {
     .card_name {
-        font-size: 20px;
+        font-size: 1rem;
     }
 
     .card_content {
-        font-size: 13px;
+        font-size: 0.875rem;
+    }
+
+    .card_button {
+        font-size: 0.75rem;
+        padding: 8px 16px;
     }
 }
