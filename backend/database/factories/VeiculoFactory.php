@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Categoria;
 use BcMath\Number;
 use GuzzleHttp\Psr7\UploadedFile;
 use Illuminate\Database\Eloquent\Factories\Factory;
@@ -24,8 +25,7 @@ class VeiculoFactory extends Factory
             'ano' => fake()->year(),
             'estoque' => fake()->numberBetween(0,10),
             'image' => $this->generateImage(),
-            'categoria_id' => \App\Models\Categoria::factory(),
-
+            'categoria_id' => (Categoria::all()->random(1)->first())->id,
         ];
     }
     public function generateImage(){

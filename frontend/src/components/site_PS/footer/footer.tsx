@@ -13,7 +13,7 @@ export default function Footer(){
                     <h2>A melhor revendedora automotiva da região sudeste do Brasil</h2>
                     <p>Descubra os veiculos mais rapidos do mundo</p>
                     <div className={style.social_media}>
-                        <a target='_blank' href="https://www.instagram.com/matheusrdgs7/" className={style.social_link} id='instagram'>
+                        <a target='_blank'href="https://www.instagram.com/matheusrdgs7/" className={style.social_link} id='instagram'>
                             <FaInstagram />
                         </a>
                         <a target='_blank' href="https://www.instagram.com/matheusrdgs7/" className={style.social_link} id='facebook'>
